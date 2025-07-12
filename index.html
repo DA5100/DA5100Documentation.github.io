@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Drama Arena Documentacion</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .swiper {
+      width: 100%;
+      height: 100vh;
+    }
+    .swiper-slide {
+      background-size: cover;
+      background-position: center;
+      position: relative;
+    }
+    .swiper-button-next,
+    .swiper-button-prev {
+      color: white;
+    }
+
+    .fade-in-up {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.6s ease-out;
+    }
+    .fade-in-up.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .delay-0 { transition-delay: 0ms; }
+    .delay-1 { transition-delay: 100ms; }
+    .delay-2 { transition-delay: 200ms; }
+
+    /* Modal */
+    .modal {
+      transition: opacity 0.3s ease, transform 0.3s ease;
+      transform: translateY(20px);
+      opacity: 0;
+      pointer-events: none;
+    }
+    .modal.show {
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: auto;
+    }
+  </style>
+</head>
+<body class="bg-black text-white overflow-hidden">
+
+  <div class="swiper">
+    <div class="swiper-wrapper">
+
+      <!-- Slide 1 -->
+      <div class="swiper-slide" style="background-image: url('https://fashion-slider.uiinitiative.com/images/nike.jpg')">
+        <div class="text-wrapper relative flex flex-col justify-end h-full bg-black/40 p-6 md:p-12">
+          <h2 class="fade-in-up delay-0 text-3xl md:text-5xl font-bold mb-4">Seni Musik</h2>
+          <p class="fade-in-up delay-1 text-base md:text-lg mb-6 max-w-md">"Nada-nada mengalun, menjadi jiwa di balik drama yang bicara tanpa kata."</p>
+          <button
+            onclick="openModal(this)"
+            class="fade-in-up delay-2 inline-block bg-white text-black font-semibold px-6 py-2 rounded-full hover:bg-gray-200 transition-all"
+            data-title="Seni Musik"
+            data-items='["Hadroh", "Voice Musthafa : Sing-Off NASGOR", "Choir-l-Ummah", "NasyiDA", "EQ Band : Bongkar", "DA n DOET", "EQ Band : Jangan Remehkan", "Grand Closing : Pulang"]'
+          >
+            Tonton Sekarang
+          </button>
+        </div>
+      </div>
+
+      <!-- Slide 2 -->
+      <div class="swiper-slide" style="background-image: url('https://fashion-slider.uiinitiative.com/images/puma.jpg')">
+        <div class="text-wrapper relative flex flex-col justify-end h-full bg-black/40 p-6 md:p-12">
+          <h2 class="fade-in-up delay-0 text-3xl md:text-5xl font-bold mb-4">Seni Teater</h2>
+          <p class="fade-in-up delay-1 text-base md:text-lg mb-6 max-w-md">"Seni teater di Drama Arena berdenyut dalam cahaya, menjelmakan kata menjadi jiwa di atas panggung."</p>
+          <button
+            onclick="openModal(this)"
+            class="fade-in-up delay-2 inline-block bg-white text-black font-semibold px-6 py-2 rounded-full hover:bg-gray-200 transition-all"
+            data-title="Seni Teater"
+            data-items='["Drama Act 1 : Pesan Penyangkalan", "T.O.J Tongue of Justice", "Drama Act 2 : Pesan Amarah", "Dialog : Identitas Gawat Darurat", "Drama Act 3 : Pesan Negoisasi", "Ini Tok Show", "Phantomystica", "Maqsop D.K.I", "Drama Act 4 : Pesan Peringatan", "Pesan Terakhir : Penerimaan"]'
+          >
+            Tonton Sekarang
+          </button>
+        </div>
+      </div>
+
+      <!-- Slide 3 -->
+      <div class="swiper-slide" style="background-image: url('https://fashion-slider.uiinitiative.com/images/yeeze.jpg')">
+        <div class="text-wrapper relative flex flex-col justify-end h-full bg-black/40 p-6 md:p-12">
+          <h2 class="fade-in-up delay-0 text-3xl md:text-5xl font-bold mb-4">Seni Tari</h2>
+          <p class="fade-in-up delay-1 text-base md:text-lg mb-6 max-w-md">"Gerak tari di Drama Arena menari bersama cerita, menyulam emosi dalam setiap langkahnya."</p>
+          <button
+            onclick="openModal(this)"
+            class="fade-in-up delay-2 inline-block bg-white text-black font-semibold px-6 py-2 rounded-full hover:bg-gray-200 transition-all"
+            data-title="Seni Tari"
+            data-items='["Grand Opening", "Nadham Rencong", "Somba-Somba Diraja", "Wiroyudho", "Manari-Nari Basamo", "Tatarucingan", "Satrio Kencono", "Tong PU Gaya", "Nusantara Berpadu Ria", "Hunza Balistani", "KINJAZ : Kage Suitaru", "ASEAN Fusion", "Slava Rhythm", "ZonZero"]'
+          >
+            Tonton Sekarang
+          </button>
+        </div>
+      </div>
+
+      <!-- Slide 4 -->
+      <div class="swiper-slide" style="background-image: url('https://fashion-slider.uiinitiative.com/images/adidas.jpg')">
+        <div class="text-wrapper relative flex flex-col justify-end h-full bg-black/40 p-6 md:p-12">
+          <h2 class="fade-in-up delay-0 text-3xl md:text-5xl font-bold mb-4">Seni Rupa</h2>
+          <p class="fade-in-up delay-1 text-base md:text-lg mb-6 max-w-md">"Seni rupa dalam acara Drama Arena menjadi elemen visual yang memperkuat nuansa dan mendukung estetika pertunjukan secara keseluruhan."</p>
+          <button
+            onclick="openModal(this)"
+            class="fade-in-up delay-2 inline-block bg-white text-black font-semibold px-6 py-2 rounded-full hover:bg-gray-200 transition-all"
+            data-title="Seni Rupa"
+            data-items='["Visual Protokol", "Visual Opening", "Visual Sapa Mc", "Master of Ceremony 1", "Tilawah Ayat Suci Al-Quran", "Master of Ceremony 2", "Sambutan Ketua Drama Arena", "Master of Ceremony 3", "Sambutan Pimpinan", "Cahaya Imaji", "Visual : Five Assemble", "Visual-Pesan Pertama", "Visual Nyatakan Kebenaran", "MC Non Formal", "Visual : Nusantara Berpadu Ria", "Visual : Milliu Membentuk Perilaku", "Iklan Aqalin", "Visual : Ceritanya Berakhir"]'
+          >
+            Tonton Sekarang
+          </button>
+        </div>
+      </div>
+
+      <!-- Slide 5 -->
+<div class="swiper-slide" style="background-image: url('https://fashion-slider.uiinitiative.com/images/puma.jpg')">
+  <div class="text-wrapper relative flex flex-col justify-end h-full bg-black/40 p-6 md:p-12">
+    <h2 class="fade-in-up delay-0 text-3xl md:text-5xl font-bold mb-4">Susunan Acara</h2>
+    <p class="fade-in-up delay-1 text-base md:text-lg mb-6 max-w-md">Untuk Anda Yang Ingin Menonton Sesuai Urutan Acara.</p>
+    <button
+      onclick="openModal(this)"
+      class="fade-in-up delay-2 inline-block bg-white text-black font-semibold px-6 py-2 rounded-full hover:bg-gray-200 transition-all"
+      data-title="Susunan Acara"
+      data-items='[
+        "1. Visual Protokol",
+        "2. Visual Opening",
+        "3. Hadroh",
+        "4. Visual Sapa Mc",
+        "5. Master of Ceremony",
+        "6. Tilawah Ayat Suci Al-Quran",
+        "7. Master of Ceremony",
+        "8. Sambutan Ketua Drama Arena",
+        "9. Master of Ceremony",
+        "10. Sambutan Pimpinan",
+        "11. Cahaya Imaji",
+        "12. Visual : Five Assemble",
+        "13. Choir-l-Ummah",
+        "14. EQ Band : Trimurti",
+        "15. Visual-Pesan Pertama",
+        "16. Grand Opening",
+        "17. Drama Act 1 : Pesan Penyangkalan",
+        "18. Voice Musthafa : Sing-Off NASGOR",
+        "19. Visual Nyatakan Kebenaran",
+        "20. T.O.J Tongue of Justice",
+        "21. NasyiDA",
+        "22. MC Non Formal",
+        "23. Drama Act 2 : Pesan Amarah",
+        "24. Visual : Nusantara Berpadu Ria",
+        "25. Nadham Rencong",
+        "26. Somba-Somba Diraja",
+        "27. Wiroyudho",
+        "28. Manari-Nari Basamo",
+        "29. Tatarucingan",
+        "30. Satrio Kencono",
+        "31. Tong PU Gaya",
+        "32. Nusantara Berpadu Ria",
+        "33. Dialog : Identitas Gawat Darurat",
+        "34. EQ Band : Bongkar",
+        "35. Visual : Milliu Membentuk Perilaku",
+        "36. Drama Act 3 : Pesan Negoisasi",
+        "37. DA n DOET : Darah Muda",
+        "38. Ini Tok Show",
+        "39. EQ Band : Jangan Remehkan",
+        "40. Iklan Aqalin",
+        "41. Hunza Balistani",
+        "42. KINJAZ : Kage Sutairu",
+        "43. ASEAN Fusiun",
+        "44. Slava Rhythm",
+        "45. ZonZero",
+        "46. Phantomystica",
+        "47. Maqsop D.K.I",
+        "48. Drama Act 4 : Pesan Peringatan",
+        "49. Visual : Ceritanya Berakhir",
+        "50. Pesan Terakhir : Penerimaan",
+        "51. Grand Closing : Pulang"
+      ]'
+    >
+      Tonton Sekarang
+    </button>
+  </div>
+</div>
+
+
+    </div>
+
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+  </div>
+
+  <!-- Modal Fullscreen -->
+  <div id="dropdownModal" class="fixed inset-0 bg-black/80 text-white z-50 flex justify-center items-center modal">
+    <div class="bg-white text-black rounded-xl p-10 max-w-2xl w-[90%] mx-auto text-center relative">
+      <button onclick="closeModal()" class="absolute top-3 right-4 text-black text-2xl font-bold hover:text-red-500">&times;</button>
+      <h2 id="modalTitle" class="text-2xl font-bold mb-4">Shop Collection</h2>
+      <div id="modalList" class="space-y-3 text-left overflow-y-auto pr-2" style="max-height: calc(2.5rem * 5 + 0.75rem * 4)">
+        <!-- List content will be injected by JS -->
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+  <script>
+    const swiper = new Swiper('.swiper', {
+      loop: true,
+      speed: 1000,
+      effect: 'creative',
+      grabCursor: true,
+      creativeEffect: {
+        prev: { translate: ['-100%', 0, -500], opacity: 0 },
+        next: { translate: ['100%', 0, -500], opacity: 0 }
+      },
+      
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev'
+      },
+      on: {
+        slideChangeTransitionStart: () => {
+          document.querySelectorAll('.fade-in-up').forEach(el => el.classList.remove('show'));
+          closeModal(); // optional: auto-close modal
+        },
+        slideChangeTransitionEnd: () => {
+          const activeSlide = document.querySelector('.swiper-slide-active');
+          activeSlide.querySelectorAll('.fade-in-up').forEach(el => el.classList.add('show'));
+        }
+      }
+    });
+
+    window.addEventListener('load', () => {
+      document.querySelector('.swiper-slide-active')
+        .querySelectorAll('.fade-in-up')
+        .forEach(el => el.classList.add('show'));
+    });
+
+    function openModal(button) {
+      const title = button.getAttribute('data-title');
+      const items = JSON.parse(button.getAttribute('data-items'));
+
+      document.getElementById('modalTitle').textContent = title;
+
+      const listContainer = document.getElementById('modalList');
+      listContainer.innerHTML = '';
+      items.forEach(item => {
+        const link = document.createElement('a');
+        link.href = '#';
+        link.textContent = item;
+        link.className = 'block hover:text-blue-600';
+        listContainer.appendChild(link);
+      });
+
+      document.getElementById('dropdownModal').classList.add('show');
+    }
+
+    function closeModal() {
+      document.getElementById('dropdownModal').classList.remove('show');
+    }
+
+    document.getElementById('dropdownModal').addEventListener('click', function (e) {
+      if (e.target === this) closeModal();
+    });
+  </script>
+
+</body>
+</html>
